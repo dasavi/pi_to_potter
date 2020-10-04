@@ -312,8 +312,7 @@ def TrackWand():
                     noPt = noPt + 1
                     if noPt > 10:
                         try:
-                            contours, hierarchy = cv2.findContours(
-                                line_mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+                            image, contours, hierarchy = cv2.findContours(line_mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
                             if (contours is not None and len(contours) > 0):
                                 cnt = contours[0]
                                 x, y, w, h = cv2.boundingRect(cnt)
